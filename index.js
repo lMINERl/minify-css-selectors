@@ -86,7 +86,9 @@ module.exports = postcss.plugin("minify-css-selectors", (options = {
                     })
                     Object.keys(properties).forEach(key => {
                         rf = rf.replaceAll(new RegExp(`var\\(${key}\\)`, 'gm'), `var(${properties[key]})`)
+                            .replaceAll(new RegExp(`\\"${key}\\"`, 'gm'), `"${properties[key]}"`);
                     })
+
 
                     fs.writeFile(`${options.outPutPath}/${file}`, rf, () => {
                         console.log(`${file}:finished`);
