@@ -24,7 +24,7 @@ module.exports = postcss.plugin("minify-css-selectors", (options = {
             for (let current of ruleSelector) {
                 if (Object.keys(selectors).includes(previous)) {
                     if (!selectors[previous][current]) {
-                        selectors[previous][current] = `_${Object.keys(selectors[previous]).length.toString(36)}`;
+                        selectors[previous][current] = `${Object.keys(selectors[previous]).length.toString(36)}`;
                     }
                     newSelector = newSelector + selectors[previous][current];
                 } else {
