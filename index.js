@@ -2,8 +2,8 @@ const postcss = require("postcss");
 const fs = require('fs');
 
 module.exports = postcss.plugin("minify-css-selectors", (options = {
-    jsDirectoryPath: '',
-    outPutPath: ''
+    jsDirectoryPath: './dist/assets',
+    outPutPath: './dist/assets'
 }) => {
     // Work with options here
 
