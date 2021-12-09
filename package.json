@@ -1,6 +1,6 @@
 {
   "name": "minify-css-selectors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "commonjs",
   "main": "index.js",
   "description": "PostCSS plugin to minify css selectors in .css files and .js files for SolidJs",
