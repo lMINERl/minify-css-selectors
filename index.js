@@ -1,8 +1,9 @@
-import postcss from "postcss";
-import fs from 'fs';
+const postcss = require("postcss");
+const fs = require('fs');
 
-export default postcss.plugin("minify-css-selectors", (options = {
-    jsDirectoryPath: ''
+module.exports = postcss.plugin("minify-css-selectors", (options = {
+    jsDirectoryPath: '',
+    outPutPath: ''
 }) => {
     // Work with options here
 
@@ -125,7 +126,7 @@ export default postcss.plugin("minify-css-selectors", (options = {
                 }
             });
 
-            fs.writeFileSync(`./dist/${file}`, rf);
+            fs.writeFileSync(`${options.outPutPath}/${file}`, rf);
         });
     };
 });
